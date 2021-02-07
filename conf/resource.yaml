@@ -1,9 +1,9 @@
 mysql:
   test:
-    database: kid_tutor_service
-    addr: mysql.basic.suanshubang.com:13309
-    user: homework
-    password: homework
+    database: zhuchengming
+    addr: 127.0.0.1:3306
+    user: root
+    password: 123456
     maxidleconns: 10
     maxopenconns: 1000
     connMaxLifeTime: 3600
