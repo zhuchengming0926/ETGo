@@ -3,24 +3,24 @@
  **************************************************************************/
 
 /**
- * @File: main.go
+ * @File: Init.go
  * @Author: zhuchengming@zuoyebang.com
- * @Description:
- * @Date: 2021/2/7 19:49
+ * @Description: 初始化的一些操作
+ * @Date: 2021/2/7 20:17
  */
 
-package main
+package helper
 
 import (
-	"ETGo/components"
 	"ETGo/conf"
-	"ETGo/helper"
+	"github.com/gin-gonic/gin"
 )
 
-func main()  {
-	engine := components.GetEngin()
-	helper.Init(engine)
+func Init(engine *gin.Engine)  {
+	PreInit()
+}
 
-	// 启动web server
-	_ = engine.Run(conf.BasicConf.Server.Address)
+func PreInit()  {
+	conf.SetAppName("ETGo")
+	conf.InitConf()
 }

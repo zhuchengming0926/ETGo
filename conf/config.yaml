@@ -1,0 +1,7 @@
+server:
+  # 服务地圵
+  address: ":8955"
+  # 读超时时间
+  readtimeout: "10s"
+  # 写超时时间
+  writetimeout: "10s"

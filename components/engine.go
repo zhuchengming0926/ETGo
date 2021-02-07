@@ -3,24 +3,26 @@
  **************************************************************************/
 
 /**
- * @File: main.go
+ * @File: engine.go
  * @Author: zhuchengming@zuoyebang.com
  * @Description:
- * @Date: 2021/2/7 19:49
+ * @Date: 2021/2/7 20:45
  */
 
-package main
+package components
 
 import (
-	"ETGo/components"
-	"ETGo/conf"
-	"ETGo/helper"
+	"github.com/gin-gonic/gin"
+	"sync"
 )
 
-func main()  {
-	engine := components.GetEngin()
-	helper.Init(engine)
-
-	// 启动web server
-	_ = engine.Run(conf.BasicConf.Server.Address)
+var engine *gin.Engine
+var once sync.Once
+func GetEngin() *gin.Engine {
+	once.Do(func() {
+		engine = gin.New()
+	})
+	return engine
 }
+
+

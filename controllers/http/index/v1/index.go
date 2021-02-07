@@ -3,24 +3,20 @@
  **************************************************************************/
 
 /**
- * @File: main.go
+ * @File: index.go
  * @Author: zhuchengming@zuoyebang.com
  * @Description:
- * @Date: 2021/2/7 19:49
+ * @Date: 2021/2/7 20:09
  */
 
-package main
+package v1
 
 import (
-	"ETGo/components"
-	"ETGo/conf"
 	"ETGo/helper"
+	"github.com/gin-gonic/gin"
 )
 
-func main()  {
-	engine := components.GetEngin()
-	helper.Init(engine)
-
-	// 启动web server
-	_ = engine.Run(conf.BasicConf.Server.Address)
+func GetIndex(ctx *gin.Context)  {
+	helper.Render.RenderJsonSucc(ctx, "你是我的爷")
+	return
 }

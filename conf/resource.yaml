@@ -1,0 +1,12 @@
+mysql:
+  test:
+    database: kid_tutor_service
+    addr: mysql.basic.suanshubang.com:13309
+    user: homework
+    password: homework
+    maxidleconns: 10
+    maxopenconns: 1000
+    connMaxLifeTime: 3600
+    connTimeOut: 1500ms
+    writeTimeOut: 1500ms
+    readTimeOut: 1500ms

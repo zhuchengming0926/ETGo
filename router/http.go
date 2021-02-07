@@ -3,24 +3,23 @@
  **************************************************************************/
 
 /**
- * @File: main.go
+ * @File: http.go
  * @Author: zhuchengming@zuoyebang.com
  * @Description:
- * @Date: 2021/2/7 19:49
+ * @Date: 2021/2/7 20:06
  */
 
-package main
+package router
 
 import (
-	"ETGo/components"
-	"ETGo/conf"
-	"ETGo/helper"
+	v1 "ETGo/controllers/http/index/v1"
+	"github.com/gin-gonic/gin"
 )
 
-func main()  {
-	engine := components.GetEngin()
-	helper.Init(engine)
-
-	// 启动web server
-	_ = engine.Run(conf.BasicConf.Server.Address)
+func Http(router *gin.Engine)  {
+	v1Group := router.Group("/et/v1")
+	{
+		v1Group.POST("/index", v1.GetIndex)
+	}
 }
+
