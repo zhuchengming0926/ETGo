@@ -18,9 +18,14 @@ import (
 
 func Init(engine *gin.Engine)  {
 	PreInit()
+	InitResource(engine)
 }
 
 func PreInit()  {
 	conf.SetAppName("ETGo")
 	conf.InitConf()
+}
+
+func InitResource(engine *gin.Engine)  {
+	InitMysql()
 }
