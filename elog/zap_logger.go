@@ -1,6 +1,6 @@
 /**
  * @File: zap_logger.go
- * @Author: zhuchengming@zuoyebang.com
+ * @Author: zhuchengming
  * @Description:
  * @Date: 2021/2/10 11:04
  */

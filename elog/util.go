@@ -1,6 +1,6 @@
 /**
  * @File: util.go
- * @Author: zhuchengming@zuoyebang.com
+ * @Author: zhuchengming
  * @Description:
  * @Date: 2021/2/9 17:34
  */
