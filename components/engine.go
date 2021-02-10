@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -12,6 +12,7 @@
 package components
 
 import (
+	"ETGo/middleware"
 	"github.com/gin-gonic/gin"
 	"sync"
 )
@@ -21,6 +22,8 @@ var once sync.Once
 func GetEngin() *gin.Engine {
 	once.Do(func() {
 		engine = gin.New()
+		engine.Use(middleware.Logger())
+		engine.Use(middleware.Recover)
 	})
 	return engine
 }

@@ -1,0 +1,3 @@
+{"level":"WARN","time":"2021-02-10 14:25:03","file":"v1/getRecordDetail.go:25","msg":"你爹出日志了吗","logId":"3655561100","requestId":"3655561100","module":"ETGo","localIp":"2.0.4.243"}
+{"level":"WARN","time":"2021-02-10 14:26:56","file":"v1/getRecordDetail.go:25","msg":"你爹出日志了吗","logId":"2754562556","requestId":"2754562556","module":"ETGo","localIp":"2.0.4.243"}
+{"level":"WARN","time":"2021-02-10 14:28:23","file":"v1/getRecordDetail.go:25","msg":"你爹出日志了吗","logId":"3554110536","requestId":"3554110536","module":"ETGo","localIp":"2.0.4.243"}

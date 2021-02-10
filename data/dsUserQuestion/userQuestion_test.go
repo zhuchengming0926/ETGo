@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -16,6 +16,7 @@ import (
 	"ETGo/test/mysqltest"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	jsoniter "github.com/json-iterator/go"
 	"testing"
 )
 
@@ -83,5 +84,8 @@ func TestBatchDelUserQuestions(t *testing.T) {
 func TestGetUserQuestions(t *testing.T) {
 	mysqltest.InitMysql()
 	ids := []uint64{1,2,3}
-	fmt.Println(GetUserQuestions(ids))
+	retMap, _ := GetUserQuestions(ids)
+	for _,val := range retMap {
+		fmt.Println(jsoniter.MarshalToString(val))
+	}
 }

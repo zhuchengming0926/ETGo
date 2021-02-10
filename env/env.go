@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -9,10 +9,11 @@
  * @Date: 2021/2/7 20:22
  */
 
-package conf
+package env
 
 import (
 	"log"
+	"path/filepath"
 	"time"
 )
 
@@ -47,6 +48,21 @@ func setAppPath() {
 // SetRootPath 设置应用的根目录
 func SetRootPath(r string) {
 	rootPath = r
+}
+
+func SetConfDirPath(subPath ...string) {
+	confDirName = filepath.Join(subPath...)
+	println("load conf: ", confDirName)
+}
+
+// GetConfDirPath 返回配置文件目录绝对地址
+func GetConfDirPath() string {
+	return confDirName
+}
+
+// LogRootPath 返回log目录的绝对地址
+func GetLogDirPath() string {
+	return filepath.Join(GetRootPath(), "logs")
 }
 
 // RootPath 返回应用的根目录

@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -13,6 +13,8 @@ package conf
 
 import (
 	"ETGo/components/base"
+	"ETGo/elog"
+	"ETGo/env"
 	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"path/filepath"
@@ -24,7 +26,8 @@ var (
 )
 
 type TBasic struct {
-	Server ServerConfig
+	Log    elog.LogConfig
+	Server env.ServerConfig
 }
 
 type ResourceConf struct {
@@ -45,20 +48,11 @@ func InitConf()  {
 
 func LoadConf(filename, confType string, s interface{})  {
 	var path string
-	path = filepath.Join(GetConfDirPath(), confType, filename)
+	path = filepath.Join(env.GetConfDirPath(), confType, filename)
 	if yamlFile, err := ioutil.ReadFile(path); err != nil {
-		panic(filename + " get error: %v " + err.Error())
+		panic(path + " get error: %v " + err.Error())
 	} else if err = yaml.Unmarshal(yamlFile, s); err != nil {
-		panic(filename + " unmarshal error: %v" + err.Error())
+		panic(path + " unmarshal error: %v" + err.Error())
 	}
 }
 
-func SetConfDirPath(subPath ...string) {
-	confDirName = filepath.Join(subPath...)
-	println("load conf: ", confDirName)
-}
-
-// GetConfDirPath 返回配置文件目录绝对地址
-func GetConfDirPath() string {
-	return confDirName
-}

@@ -3,20 +3,18 @@
  **************************************************************************/
 
 /**
- * @File: index.go
+ * @File: request.go
  * @Author: zhuchengming@zuoyebang.com
  * @Description:
- * @Date: 2021/2/7 20:09
+ * @Date: 2021/2/8 16:40
  */
 
-package v1
+package dtoUserQuestion
 
-import (
-	"ETGo/helper"
-	"github.com/gin-gonic/gin"
-)
 
-func GetIndex(ctx *gin.Context)  {
-	helper.Render.RenderJsonSucc(ctx, "你是我的爷")
-	return
+//英语反馈问题详情接口
+type DetailReq struct {
+	Id uint64 `json:"id" binding:"required"`
 }
+
+

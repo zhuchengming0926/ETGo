@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -12,14 +12,20 @@
 package router
 
 import (
-	v1 "ETGo/controllers/http/index/v1"
+	v1 "ETGo/controllers/http/userQuestion/v1"
 	"github.com/gin-gonic/gin"
 )
 
 func Http(router *gin.Engine)  {
-	v1Group := router.Group("/et/v1")
+	routerGroupRoot := router.Group("/et")
 	{
-		v1Group.POST("/index", v1.GetIndex)
+		routerGroupVer := routerGroupRoot.Group("/v1")
+		{
+			routerGroupModule := routerGroupVer.Group("/userquestion")
+			{
+				routerGroupModule.POST("/getDetail", v1.GetRecordDetail)
+			}
+		}
 	}
 }
 

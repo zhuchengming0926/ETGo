@@ -1,5 +1,5 @@
 /**************************************************************************
- * Copyright (c) 2020 Zuoyebang Inc. All Rights Reserved
+ *
  **************************************************************************/
 
 /**
@@ -63,6 +63,15 @@ func BatchDelUserQuestions(ids []uint64, opUid uint64, opName string) error {
 	return userQuestion.BatchDelRecords(ids, opUid, opName)
 }
 
-func GetUserQuestions(ids []uint64) ([]userQuestion.UserQuestion, error) {
-	return userQuestion.GetRecordsByIds(ids)
+func GetUserQuestions(ids []uint64) (map[uint64]*userQuestion.UserQuestion, error) {
+	records, err :=  userQuestion.GetRecordsByIds(ids)
+	if err != nil {
+		return nil, err
+	}
+	retMap := make(map[uint64]*userQuestion.UserQuestion)
+	for _, val := range records {
+		temp := val //不能直接使用&val, 取得都是最后一条记录
+		retMap[val.Id] = &temp
+	}
+	return retMap, nil
 }
