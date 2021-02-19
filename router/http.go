@@ -10,7 +10,8 @@
 package router
 
 import (
-	v1 "ETGo/controllers/http/userQuestion/v1"
+	agv1 "ETGo/controllers/http/algorithm/v1"
+	uqv1 "ETGo/controllers/http/userQuestion/v1"
 	"github.com/gin-gonic/gin"
 )
 
@@ -19,9 +20,14 @@ func Http(router *gin.Engine)  {
 	{
 		routerGroupVer := routerGroupRoot.Group("/v1")
 		{
-			routerGroupModule := routerGroupVer.Group("/userquestion")
+			routerGroupModuleUQ := routerGroupVer.Group("/userquestion")
 			{
-				routerGroupModule.POST("/getDetail", v1.GetRecordDetail)
+				routerGroupModuleUQ.POST("/getDetail", uqv1.GetRecordDetail)
+			}
+
+			routerGroupAlgorithm := routerGroupVer.Group("/algorithm")
+			{
+				routerGroupAlgorithm.POST("/sort", agv1.VariousSort)
 			}
 		}
 	}
