@@ -17,6 +17,8 @@ import (
 
 func main()  {
 	engine := components.GetEngin()
+	engine.LoadHTMLFiles("statics/view/index.html")
+	engine.MaxMultipartMemory = 8 << 20 //8MB 设置最大的上传文件的大小
 
 	//开启jsoniter的模糊模式
 	extra.RegisterFuzzyDecoders()
