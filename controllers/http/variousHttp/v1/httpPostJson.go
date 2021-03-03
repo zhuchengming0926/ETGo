@@ -20,7 +20,7 @@ func HttpPostJsonDemo(ctx *gin.Context)  {
 	}
 
 	req := ReqParam{}
-	if errParams := ctx.ShouldBindJSON(&req); errParams != nil {
+	if errParams := ctx.ShouldBind(&req); errParams != nil {
 		helper.Render.RenderJsonFail(ctx, errParams)
 		return
 	}

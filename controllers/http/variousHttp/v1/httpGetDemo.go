@@ -14,7 +14,7 @@ import (
 )
 
 func HttpGetDemo(ctx *gin.Context) {
-	//方式一：
+	//获取参数方式
 	r := ctx.Request
 	err := r.ParseForm()
 	if err != nil {

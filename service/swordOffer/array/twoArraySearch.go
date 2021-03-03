@@ -19,9 +19,7 @@
   这样，每一次比较都可以剔除一行或者一列，进而缩小查找范围，时间复杂度为O(n)。
 */
 
-package array
-
-import "fmt"
+package main
 
 func findNumberIn2DArray(arr [][]int, target int) bool {
 	m := len(arr)
@@ -43,12 +41,12 @@ func findNumberIn2DArray(arr [][]int, target int) bool {
 	return false
 }
 
-func main()  {
-	var arr = [][]int{
-		{1,   4,  7, 11, 15},
-		{2,   5,  8, 12, 19},
-		{10, 13, 14, 17, 24},
-	}
-
-	fmt.Println(findNumberIn2DArray(arr, 5))
-}
+//func main()  {
+//	var arr = [][]int{
+//		{1,   4,  7, 11, 15},
+//		{2,   5,  8, 12, 19},
+//		{10, 13, 14, 17, 24},
+//	}
+//
+//	fmt.Println(findNumberIn2DArray(arr, 5))
+//}

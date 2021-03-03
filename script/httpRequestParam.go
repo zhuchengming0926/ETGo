@@ -91,7 +91,6 @@ func PostUrlEncodedParam(requestParamMap map[string]interface{}) string {
 	*/
 }
 
-
 // 将map[string]interface{}结构的param转换为map[string]string
 func EncodeParamMap(maps map[string]interface{}) map[string]string {
 	res := make(map[string]string)

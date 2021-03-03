@@ -49,7 +49,7 @@ func Http(router *gin.Engine)  {
 				ctx.HTML(http.StatusOK, "index.html", nil)
 			})
 			
-			//上传文件测试
+			//前端上传文件测试
 			routerGroupVer.POST("/uploadFile", func(ctx *gin.Context) {
 				//获取表单数据
 				f, err := ctx.FormFile("f1")
