@@ -5,7 +5,7 @@
  * @Date: 2021/3/4 16:04
  */
 
-package main
+package string
 
 import "math"
 
