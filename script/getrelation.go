@@ -19,8 +19,8 @@ var urlStr string = "http://kp.zuoyebang.cc/kpstaff/api/getrelation"
 
 func testKpstaff()  {
 	var params = map[string]interface{}{
-		"staffUid": strconv.Itoa(2527638255),
-		"studentUids":[]uint64{2420729600,2222},
+		"staffUid": strconv.Itoa(2556824543),
+		"studentUids":[]uint64{2191726571},
 	}
 
 	//获取请求参数

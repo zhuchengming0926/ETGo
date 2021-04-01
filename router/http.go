@@ -42,6 +42,9 @@ func Http(router *gin.Engine)  {
 				routerGroupHttp.POST("/postmultiform", httpv1.HttpPostMultiFormDemo)
 				routerGroupHttp.POST("/postwwwurlencode", httpv1.HttpPostWwwFormUrlEncodeDemo)
 				routerGroupHttp.POST("/postxml", httpv1.HttpPostXmlDemo)
+
+				//content-type:application/octet-stream
+				routerGroupHttp.POST("/postoctettream", httpv1.HttpPostOctetTream)
 			}
 			
 			//首页测试
