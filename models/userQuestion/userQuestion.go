@@ -106,6 +106,7 @@ func getBatchSqlStr(insertDatas []*UserQuestion) (string, error) {
 }
 
 func forMatStrField(ori string) string {
+	ori = strings.Replace(ori,"'", "\\'", -1) //防止字符串中含有单引号
 	return fmt.Sprintf("'%s'", ori)
 }
 

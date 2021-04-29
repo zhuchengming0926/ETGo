@@ -14,16 +14,15 @@ import (
 	"ETGo/test/mysqltest"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	jsoniter "github.com/json-iterator/go"
 	"testing"
 )
 
 func TestAddUserQuestion(t *testing.T) {
 	mysqltest.InitMysql()
 	uid := uint64(1111)
-	uname := "zzzzzz"
-	phone := "111111112222"
-	opName := "cccccc"
+	uname := "lhy's zyb"
+	phone := "111111002222"
+	opName := "lyc"
 	opUid := uint64(2222)
 
 	id, err := AddUserQuestion(uid, opUid, uname, phone, opName)
@@ -37,7 +36,7 @@ func TestBatchAddUserQuestions(t *testing.T) {
 		&userQuestion.UserQuestion{
 			Uid:             125,
 			Phone:           "112141",
-			Uname:           "nima",
+			Uname:           "lhy'zyb",
 			IsDeleted:       0,
 			Client:          0,
 			QuestionContent: "",
@@ -50,7 +49,7 @@ func TestBatchAddUserQuestions(t *testing.T) {
 		&userQuestion.UserQuestion{
 			Uid:             136,
 			Phone:           "1151551",
-			Uname:           "woma",
+			Uname:           "woma'zyb",
 			IsDeleted:       0,
 			Client:          0,
 			QuestionContent: "",
@@ -81,9 +80,10 @@ func TestBatchDelUserQuestions(t *testing.T) {
 
 func TestGetUserQuestions(t *testing.T) {
 	mysqltest.InitMysql()
-	ids := []uint64{1,2,3}
+	ids := []uint64{12,13}
 	retMap, _ := GetUserQuestions(ids)
 	for _,val := range retMap {
-		fmt.Println(jsoniter.MarshalToString(val))
+		fmt.Println(val.Uname)
+		//fmt.Println(jsoniter.MarshalToString(val))
 	}
 }
