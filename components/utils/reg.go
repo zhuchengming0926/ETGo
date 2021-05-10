@@ -93,6 +93,8 @@ func IsChineseCharacter(str string) bool {
 	return regexp.MustCompile(regular).MatchString(str)
 }
 
+//(?i)表示所在位置右侧的表达式开启忽略大小写模式
+//https://blog.csdn.net/panamera918/article/details/80077170
 func IsValidateImageUrl(url string) bool {
 	imageCompile := regexp.MustCompile(`(?i)^(http|https)://.*?/[\da-z_\-]+\.(jpg|png)$`)
 	name := imageCompile.FindString(url)
