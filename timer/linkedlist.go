@@ -60,7 +60,6 @@ func (this *LinkedList) PushBack(node Node) *Node {
 }
 
 func (this *LinkedList) erase(node *Node) {
-	fmt.Println(node)
 	if nil == node {
 		return
 	} else if nil == node.next && nil == node.next {

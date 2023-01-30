@@ -28,7 +28,7 @@ func PreInit()  {
 }
 
 func InitResource(engine *gin.Engine)  {
-	InitMysql()
+	//InitMysql()
 }
 
 func Clear() {

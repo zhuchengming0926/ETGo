@@ -22,6 +22,7 @@ func VariousSort(ctx *gin.Context)  {
 		helper.Render.RenderJsonFail(ctx, errParams)
 		return
 	}
+	elog.Info(ctx, "参数, ", req.Type)
 	res, err := svAlgorithm.VariousSort(&req)
 	if err != nil {
 		helper.Render.RenderJsonFail(ctx, err)
