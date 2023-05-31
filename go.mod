@@ -21,5 +21,6 @@ require (
 	github.com/tebeka/strftime v0.1.5 // indirect
 	go.uber.org/zap v1.16.0
 	golang.org/x/crypto v0.0.0-20210616213533-5ff15b29337e
+	golang.org/x/time v0.3.0
 	gopkg.in/yaml.v2 v2.2.8
 )
